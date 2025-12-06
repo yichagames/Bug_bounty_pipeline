@@ -1,0 +1,7 @@
+[2025-12-06 21:16:42,026] [root] [DEBUG] Now running: ls -la
+[2025-12-06 21:17:02,057] [log.py] [DEBUG] Now running: ls -la
+[2025-12-06 21:27:21,110] [log.py] [INFO] Now running: ls -la
+[2025-12-06 22:31:13,707] [log.py] [WARNING] Error while writing settings: 'Setting'
+[2025-12-06 22:31:48,977] [log.py] [WARNING] Error while writing settings: <function print_exc at 0x7f61a6466200>
+[2025-12-06 22:32:16,704] [log.py] [WARNING] Error while writing settings: None
+[2025-12-06 22:32:55,878] [log.py] [INFO] Successfully wrote [1, 2, 3, 4, 5] into {'Settings1': [1, 2, 3, 4, 5]}
