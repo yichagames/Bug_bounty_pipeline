@@ -1,10 +1,14 @@
-from utils import script_exec
+from utils import script_exec, log
 import traceback
+from flask import Flask, render_template
 
-command = input("write your command: ").split(" ")
-print(command)
-try:
-    print(script_exec.execute(command))
-except Exception as e:
-    print(f"From main.py: {e}")
-    traceback.print_exc()
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/api/<action>/<value>")
+def api(action, value):
+    log.log(f"ts is zaa action: {action}, and hte valu: {value}")
+    return "<h1>HMMM APIIIII</h1>"
