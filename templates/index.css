@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #0D0F13;
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+}
+nav > .right > i{
+    font-size: 1.5vw;
+    margin: 1vw;
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    color:#6C63FF;
+}
+nav > .right > i:last-child{
+    margin-right: 2vw;
+}
+.box{
+    background-color: #1A1D23;
+    border-radius: 5vw;
+    border: 0.1vw #1F6FEB;
+    border-style:ridge;
+    height: 80vw;
+    width:80vw;
+}
