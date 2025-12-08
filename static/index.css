@@ -1,0 +1,117 @@
+:root {
+  --bg: #0D1117;
+  --bg-secondary: #161B22;
+
+  --primary: #1F6FEB;
+  --accent: #00D9FF;
+
+  --text: #E6EDF3;
+  --text-secondary: #8B949E;
+
+  --border: #30363D;
+  --glow: rgba(31,111,235,0.4);
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    transition: 0.2s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    background-color: var(--bg);
+    display: flex;
+}
+
+/** side bar deco **/
+aside{
+    position: sticky;
+    border-right: 0.1vw ridge var(--border);
+    margin-right: 5vw;
+    width: 15vw;
+    transition: 0.3s ease;
+}
+aside:hover{
+    width: 20vw;
+}
+aside nav .nav-btn i{
+    font-size: 1.5vw;
+    margin: 2vw;
+    color:var(--primary);
+}
+aside nav .nav-btn:hover i{
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--glow);
+}
+aside nav .nav-btn:hover h1{
+    display: block;
+    opacity: 1;
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--glow);
+    font-size: large;
+}
+nav{
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+    display: grid;
+}
+.nav-btn{
+    display: grid;
+    justify-items:center;
+    align-items: center;
+    row-gap: 0.2rem;
+}
+.nav-btn h1{
+    align-self: center;
+    justify-self: center;
+    color: var(--text-secondary);
+    opacity: 0;
+    font-size: 0;
+}
+
+
+/** main body **/
+.a { grid-area: a; }
+.b { grid-area: b; }
+.c { grid-area: c; }
+.d { grid-area: d; }
+.e { grid-area: e; }
+.f { grid-area: f; }
+.g { grid-area: g; }
+.h { grid-area: h; }
+.i { grid-area: i; }
+
+
+.main {
+    height: 100%;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 20vw); 
+    gap: 4vw;
+    grid-template-areas:
+        "a a a"
+        "b b c"
+        "d e f"
+        "g g h"
+        "i i i";
+}
+
+.box {
+    background-color: #1A1D23;
+    border-radius: 1rem;
+    border: 2px solid #30363D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.box:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--glow);
+    transform: translateY(-3px);
+}
