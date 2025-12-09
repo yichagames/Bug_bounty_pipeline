@@ -28,14 +28,16 @@ body{
 
 /** side bar deco **/
 aside{
+    background-color: var(--bg-secondary);
     position: sticky;
     border-right: 0.1vw ridge var(--border);
-    margin-right: 5vw;
-    width: 15vw;
+    margin-right: 7vw;
+    width: 7vw;
     transition: 0.3s ease;
 }
 aside:hover{
-    width: 20vw;
+    width: 10vw;
+    margin-right: 4vw;
 }
 aside nav .nav-btn i{
     font-size: 1.5vw;
@@ -89,7 +91,7 @@ nav{
 
 .main {
     height: 100%;
-    width: 70%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 20vw); 
