@@ -20,6 +20,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: var(--text);
 }
 body{
     background-color: var(--bg);
@@ -29,31 +30,41 @@ body{
 /** side bar deco **/
 aside{
     background-color: var(--bg-secondary);
+    border-right: 0.2vw solid var(--border);
     position: sticky;
-    border-right: 0.1vw ridge var(--border);
-    margin-right: 7vw;
+    margin-right: 3vw;
     width: 7vw;
     transition: 0.3s ease;
 }
 aside:hover{
+    border-color: var(--accent);
+    box-shadow: 0 0 1vw var(--glow);
     width: 10vw;
-    margin-right: 4vw;
+    margin-right: 0vw;
 }
-aside nav .nav-btn i{
+.nav-btn i{
     font-size: 1.5vw;
     margin: 2vw;
-    color:var(--primary);
+    color:var(--border);
 }
-aside nav .nav-btn:hover i{
+.nav-btn:hover i{
     color: var(--accent);
     text-shadow: 0 0 20px var(--glow);
 }
-aside nav .nav-btn:hover h1{
+
+.nav-btn h1{
+    align-self: center;
+    justify-self: center;
+    color: var(--bg-secondary);
+    opacity: 0;
+    font-size: 0;
+}
+.nav-btn:hover h1{
     display: block;
     opacity: 1;
     color: var(--accent);
-    text-shadow: 0 0 20px var(--glow);
-    font-size: large;
+    text-shadow: 0 0 1vw var(--glow);
+    font-size: 1.4vw;
 }
 nav{
     position: sticky;
@@ -68,14 +79,6 @@ nav{
     align-items: center;
     row-gap: 0.2rem;
 }
-.nav-btn h1{
-    align-self: center;
-    justify-self: center;
-    color: var(--text-secondary);
-    opacity: 0;
-    font-size: 0;
-}
-
 
 /** main body **/
 .a { grid-area: a; }
@@ -90,30 +93,61 @@ nav{
 
 
 .main {
-    height: 100%;
+    padding: 3vw;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 20vw); 
+    grid-template-rows: repeat(6, 20vw); 
     gap: 4vw;
     grid-template-areas:
         "a a a"
-        "b b c"
-        "d e f"
-        "g g h"
+        "b b b"
+        "c c d"
+        "e f g"
+        "h h h"
         "i i i";
 }
-
-.box {
-    background-color: #1A1D23;
-    border-radius: 1rem;
-    border: 2px solid #30363D;
-    display: flex;
+.box:first-child{
     justify-content: center;
-    align-items: center;
+    align-content: center;
+}
+.box {
+    background-color: var(--bg-secondary);
+    border-radius: 0.5vw;
+    border: 0.2vw solid var(--border);
+    display: grid;
+    padding: 3vw;
     }
 .box:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 20px var(--glow);
+    box-shadow: 0 0 1vw var(--glow);
     transform: translateY(-3px);
+}
+.box h1{
+    font-size: 2.5vw;
+}
+.box h2{
+    font-size: 2vw;
+}
+.box h3{
+    font-size: 1vw;
+}
+.box h4{
+    font-size: 1vw;
+}
+.box button{
+    height: 3vw;
+    width: 6vw;
+    border-radius: 0.7vw;
+    border: none;
+    background-color: var(--primary);
+}
+.box button:hover{
+    background-color: var(--accent);
+    box-shadow: 0 0 0.4vw var(--glow);
+}
+.loading{
+    position:relative;
+    height: 1vw;
+    width: 1vw;
 }
