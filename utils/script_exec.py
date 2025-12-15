@@ -6,4 +6,5 @@ def execute(c):
         log.log(f"Now running: {' '.join(c)}")
         return run.check_output(c, text=True)
     except run.CalledProcessError as e:
-        return "looks like ts func is kinda unc tho idk prob cuz: " + e
+        log.log(f"subprocess {' '.join(c)} failed unexpectedly: " + e)
+        return f"subprocess {' '.join(c)} failed unexpectedly: " + e
