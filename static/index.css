@@ -160,7 +160,7 @@ nav{
     transform: translate(-50%, -50%);
     z-index: -1;
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 .popup:hover{
     border-color: var(--accent);
@@ -172,7 +172,7 @@ nav{
     height: 200vh;
     background-color: var(--bg);
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.3s;
     z-index: -2;
 }
 .popup.opened ~ .dim{

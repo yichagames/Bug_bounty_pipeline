@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects_popup = document.getElementById("projects_popup")
     const settings_popup = document.getElementById("settings_popup")
     const dim = document.getElementById("dim")
+
+    for (let i = 0; i < document.forms.length; i++) {
+        document.forms[i].addEventListener("keydown", function(e){
+            if (e.key != "Enter") return
+            this.submit()
+        })
+    }
     
     settings.addEventListener("click", (e) => {
         settings_popup.classList.add("opened")

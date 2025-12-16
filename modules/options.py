@@ -13,5 +13,6 @@ def Fetch_project(p):
 def Change_project(p):
     return
 
-def Header_Agent(h,a):
+def Header_Agent(info):
+    log.log(info)
     return
