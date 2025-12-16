@@ -32,7 +32,6 @@ aside{
     background-color: var(--bg-secondary);
     border-right: 0.2vw solid var(--border);
     position: sticky;
-    margin-right: 3vw;
     width: 7vw;
     transition: 0.3s ease;
 }
@@ -94,6 +93,7 @@ nav{
 
 .main {
     padding: 3vw;
+    padding-left: 6vw;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -118,7 +118,7 @@ nav{
     display: grid;
     padding: 3vw;
     }
-.box:hover {
+.main .box:hover {
     border-color: var(--accent);
     box-shadow: 0 0 1vw var(--glow);
     transform: translateY(-3px);
@@ -155,9 +155,32 @@ nav{
 .popup{
     position: fixed;
     justify-content: center;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
 }
 .popup:hover{
+    border-color: var(--accent);
+    box-shadow: 0 0 1vw var(--glow);
+}
+.dim{
+    position:fixed;
+    width: 100vw;
+    height: 200vh;
+    background-color: var(--bg);
+    opacity: 0;
+    transition: 0.2s ease;
+    z-index: -1;
+}
+.popup.opened ~ .dim{
+    opacity: 0.8;
+    z-index: 1;
+}
+.opened{
+    opacity: 1;
+    top: 50%;
+    z-index: 2;
 }

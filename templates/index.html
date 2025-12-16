@@ -7,6 +7,7 @@
     <link rel="icon" href="../static/favicon.ico">
     <script src="https://kit.fontawesome.com/d659ec4204.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/api.js">
     <script src="../static/index.js"></script>
 
     <!-- poppins font import -->
@@ -17,26 +18,36 @@
 <body>
     <aside>
         <nav>
-            <div class="home nav-btn">
+            <div class="home nav-btn" id="home">
                 <i class="fa-solid fa-house i-home"></i>
                 <h1>Home</h1>
             </div>
-            <div class="dashboard nav-btn">
+            <div class="dashboard nav-btn" id="dashboard">
                 <i class="fa-solid fa-chart-line i-dashboard"></i>
                 <h1>Dashboard</h1>
             </div>
-            <div class="home nav-btn">
+            <div class="projects nav-btn" id="projects">
                 <i class="fa-solid fa-book-medical i-projects"></i>
                 <h1>Projects</h1>
             </div>
-            <div class="settings nav-btn">
+            <div class="settings nav-btn" id="settings">
                 <i class="fa-solid fa-gear i-settings"></i>
                 <h1>Settings</h1>
             </div>
         </nav>
     </aside>
-        
-    <div class="popup box"></div>
+    <div class="popups">   
+        <div class="popup box" id="projects_popup">
+            <h1>Projects list</h1>
+        </div>
+        <div class="popup box" id="settings_popup">
+            <h1>Settings</h1>
+            <input type="text" placeholder="Custom User-Agent">
+            <input type="text" placeholder="Custom Header">
+        </div>
+        <div class="dim" id="dim"></div> 
+    </div>
+    
     <div class="main">
         <div class="box a">
             <h1 id="info_domain">*.example.com</h1>

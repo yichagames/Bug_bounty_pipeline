@@ -1,20 +1,23 @@
-document.addEventListener("click", async function(e){
-    const btn = e.target.closest('.api-btn')
-    if (!btn) return
-    await api(btn.dataset.path)
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const home = document.getElementById("home")
+    const dashboard = document.getElementById("dashboard")
+    const projects = document.getElementById("projects")
+    const settings = document.getElementById("settings")
 
-async function api(path, method="GET", data = null){
-    api_path = "api/" + path
-    const option = {
-        method,
-        headers: {}
-    }
-    if (data) {
-        option.headers["Content-Type"] = "application/json"
-        option.body = JSON.stringify(data)
-    }
-    const res = await fetch(api_path, option)
-    let text = await res.json()
-    console.log(text)
-}
+    const projects_popup = document.getElementById("projects_popup")
+    const settings_popup = document.getElementById("settings_popup")
+    const dim = document.getElementById("dim")
+    
+    settings.addEventListener("click", (e) => {
+        settings_popup.classList.add("opened")
+        projects_popup.classList.remove("opened")
+    })
+    projects.addEventListener("click",(e) => {
+        projects_popup.classList.add("opened")
+        settings_popup.classList.remove("opened")
+    })
+    dim.addEventListener("click", () => {
+        settings_popup.classList.remove("opened")
+        projects_popup.classList.remove("opened")
+    })
+})
