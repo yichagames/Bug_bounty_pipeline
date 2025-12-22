@@ -17,10 +17,10 @@ def Delete_project(p):
     log(f"Successfully deleted {p["project_domain"]} from projects")
     return
 
-def Current_project(p):
+def Current_project(p = None):
     return read_settings(["Settings", "Current_project"])
 
-def Fetch_all_projects(p):
+def Fetch_all_projects(p = None):
     return list(read_settings(["Projects"]).keys())
 
 def Fetch_project(p):
