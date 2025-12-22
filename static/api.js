@@ -36,4 +36,5 @@ document.addEventListener("submit", async e => {
         },
         body: JSON.stringify(data)
     })
+    location.reload()
 })

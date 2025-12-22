@@ -3,14 +3,10 @@
         "Current_project": "test"
     },
     "Projects": {
-        "Projects1": {
-            
-        },
         "test": {
             "Header": "asdaasdasdsdsadsdf",
             "User_agent": "sdfsdfassadasdaasdasssadasdd"
         },
-        "asdasdasdas": {},
-        "asdasdasdasdsfsdf": {}
+        "asdasdasdas": {}
     }
 }

@@ -218,4 +218,4 @@ __marimo__/
 logs/
 outputs/
 run_local.py
-launch.json
+.vscode/

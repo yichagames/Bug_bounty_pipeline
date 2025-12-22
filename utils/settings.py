@@ -32,20 +32,19 @@ def write_settings(key, value):
         return
     
 def delete_settings(key):
-    try:
+    try: 
         with open("config.json", "r") as f:
             data = json.load(f)
         d = data
-        for k in key:
+        for k in key[:-1]:
             if k not in d:
                 log(f"Trying to delete a non-existing setting or a setting from a non-existing path")
-                return
+                d[k] = {}
             d = d[k]
-        del d
+        del d[key[-1]]
         with open("config.json", "w") as f:
             json.dump(data, f, indent=4)
-            log(f"Successfully removed a setting")
-
+        log(f"Successfully removed a setting")
     except:
-        log(f"Error while deleting settings: {traceback.format_exc()}", "warning")
+        log(f"Error while writing settings: {traceback.format_exc()}", "warning")
         return

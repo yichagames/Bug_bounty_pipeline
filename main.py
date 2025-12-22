@@ -21,9 +21,10 @@ def api(action, value):
     if(request.method == "POST"):
         value = request.get_json()
     log(f"api_action: {action}, value: {value}")
+    result = handler.handler(action, value)
     return jsonify({
         "action": str(action),
         "value": str(value),
-        "result": handler.handler(action, value),
+        "result": result,
         "status": "ok"
     })
