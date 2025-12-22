@@ -1,3 +1,3 @@
-from utils import script_exec
+from utils.script_exec import execute
 
-script_exec.execute(["flask", "--app", "main", "run"])
+execute(["flask", "--app", "main", "run"])

@@ -1,19 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const home = document.getElementById("home")
     const dashboard = document.getElementById("dashboard")
     const projects = document.getElementById("projects")
     const settings = document.getElementById("settings")
 
-    const projects_popup = document.getElementById("projects_popup")
-    const settings_popup = document.getElementById("settings_popup")
     const dim = document.getElementById("dim")
 
-    for (let i = 0; i < document.forms.length; i++) {
-        document.forms[i].addEventListener("keydown", function(e){
-            if (e.key != "Enter") return
-            this.submit()
-        })
-    }
+    const projects_popup = document.getElementById("projects_popup")
+    const Delete_dropdown = document.getElementById("Delete_project_dropdown")
+    var all_projects_result = await api("Fetch_all_projects")
+    var all_projects = all_projects_result.result
+
+    all_projects.forEach(e => {
+        const options = document.createElement("option")
+        options.value = e
+        options.textContent = e
+        Delete_dropdown.appendChild(options)
+    });
+
+    const settings_popup = document.getElementById("settings_popup")
     
     settings.addEventListener("click", (e) => {
         settings_popup.classList.add("opened")

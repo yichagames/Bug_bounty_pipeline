@@ -7,8 +7,8 @@
     <link rel="icon" href="../static/favicon.ico">
     <script src="https://kit.fontawesome.com/d659ec4204.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/index.css">
-    <link rel="stylesheet" href="../static/api.js">
     <script src="../static/index.js"></script>
+    <script src="../static/api.js"></script>
 
     <!-- poppins font import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,12 +39,23 @@
     <div class="popups">   
         <div class="popup box" id="projects_popup">
             <h1>Projects list</h1>
+            <form class="api_forms" method="POST" data-action="Create_project">
+                <input type="text" name="project_domain" placeholder="Domain of your new project">
+                <button type="submit">Create_project</button>
+            </form>
+            <form class="api_forms" method="POST" data-action="Delete_project">
+                <select name="project_domain" id="Delete_project_dropdown" required>
+                    
+                </select>
+                <button type="submit">Create_project</button>
+            </form>
         </div>
         <div class="popup box" id="settings_popup">
             <h1>Settings</h1>
-            <form action="/api/Custom_Header_Agent" method="POST">
-                <input type="text" placeholder="Custom User-Agent">
-                <input type="text" placeholder="Custom Header">
+            <form class="api_forms" method="POST" data-action="Custom_Header_Agent">
+                <input type="text" name="User_agent" placeholder="Custom User-Agent">
+                <input type="text" name="Header" placeholder="Custom Header">
+                <button type="submit">Save</button>
             </form>
         </div>
         <div class="dim" id="dim"></div> 

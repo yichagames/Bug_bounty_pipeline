@@ -1,11 +1,11 @@
-document.addEventListener("click", async function(e){
+document.addEventListener("click", async e => {
     const btn = e.target.closest('.api-btn')
     if (!btn) return
     await api(btn.dataset.path)
 })
 
 async function api(path, method="GET", data = null){
-    api_path = "api/" + path
+    const api_path = `/api/${path}`
     const option = {
         method,
         headers: {}
@@ -16,5 +16,24 @@ async function api(path, method="GET", data = null){
     }
     const res = await fetch(api_path, option)
     let text = await res.json()
-    console.log(text)
+    await console.log(text)
+    return text
 }
+
+document.addEventListener("submit", async e => {
+    const form = e.target.closest(".api_forms")
+    if(!form) return
+    e.preventDefault()
+
+    const data = Object.fromEntries(new FormData(form))
+    const action = form.dataset.action
+    const method = (form.method || "POST").toUpperCase();
+    
+    await fetch(`/api/${action}`, {
+        method: method,
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+})

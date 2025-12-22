@@ -1,4 +1,5 @@
-from utils import script_exec, log
+from utils.log import log
+from utils.script_exec import execute
 import traceback
 from flask import Flask, render_template, redirect, jsonify, request
 import handler
@@ -18,11 +19,11 @@ def doc():
 @app.route("/api/<action>/<value>", methods=['GET'])
 def api(action, value):
     if(request.method == "POST"):
-        value = jsonify(request.get_json())
-    log.log(f"api_action: {action}, value: {value}")
-    handler.handler(action, value)
+        value = request.get_json()
+    log(f"api_action: {action}, value: {value}")
     return jsonify({
-        "action": action,
-        "value": value,
+        "action": str(action),
+        "value": str(value),
+        "result": handler.handler(action, value),
         "status": "ok"
     })
