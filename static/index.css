@@ -139,10 +139,11 @@ nav{
     height: 3vw;
     width: 6vw;
     border-radius: 0.7vw;
-    border: none;
-    background-color: var(--primary);
+    border: 0.2vw solid var(--primary);
+    background-color: var(--bg-secondary);
 }
 .box button:hover{
+    border: 0.15vw solid var(--accent);
     background-color: var(--accent);
     box-shadow: 0 0 0.4vw var(--glow);
 }
@@ -183,4 +184,26 @@ nav{
     opacity: 1;
     top: 50%;
     z-index: 2;
+}
+input{
+    background-color: var(--bg-secondary);
+    border-radius: 1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    border: 0.2vw solid var(--primary);
+    height: 2vw;
+    width: 15vw;
+}
+select{
+    background-color: var(--bg-secondary);
+    border-radius: 1vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    border: 0.2vw solid var(--primary);
+    height: 2vw;
+    width: 15vw;
+}
+/** popup elements **/
+.api_forms{
+    margin-bottom: 1vw;
 }
