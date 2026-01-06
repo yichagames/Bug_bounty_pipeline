@@ -1,12 +1,13 @@
 {
     "Settings": {
-        "Current_project": "test"
+        "Current_project": "*.visma.com"
     },
     "Projects": {
         "test": {
             "Header": "asdaasdasdsdsadsdf",
             "User_agent": "sdfsdfassadasdaasdasssadasdd"
         },
-        "asdasdasdas": {}
+        "asdasdasdas": {},
+        "*.visma.com": {}
     }
 }
