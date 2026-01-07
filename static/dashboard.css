@@ -99,16 +99,16 @@ nav{
     padding-left: 6vw;
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 20vw); 
     gap: 4vw;
     grid-template-areas:
-        "a a a"
-        "b b b"
-        "c c d"
-        "e f g"
-        "h h h"
-        "i i i";
+        "a a a a"
+        "b b d d"
+        "c c d d"
+        "e e d d"
+        "f f g g"
+        "h h i i";
 }
 .box:first-child{
     justify-content: center;
@@ -206,29 +206,6 @@ select{
     height: 2vw;
     width: 15vw;
 }
-
-#status-light-idle,
-#status-light-working,
-#status-light-finished,
-#status-light-error{
-    border-radius: 100%;
-    height: 0.8vw;
-    width: 0.8vw;
-    background-color: grey;
-}
-#status-light-working{
-    background-color: var(--accent);
-    box-shadow: 0 0 1vw var(--glow);
-}
-#status-light-finished{
-    background-color: rgb(22, 255, 22);
-    box-shadow: 0 0 1vw green;
-}
-#status-light-error{
-    background-color: rgb(255, 27, 27);
-    box-shadow: 0 0 1vw red;
-}
-
 /** popup elements **/
 .api_forms{
     margin-bottom: 1vw;
